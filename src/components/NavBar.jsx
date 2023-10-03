@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <div className="grid grid-cols-3 my-5">
             <div></div>
-            <div className="flex justify-center gap-4 mt-3">
+            <div className="flex justify-center gap-4 mt-3 text-[#706F6F]">
                 <Link to='/'>Home</Link>
                 <Link to='/'>About</Link>
                 <Link to='/'>Career</Link>
