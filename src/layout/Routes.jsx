@@ -3,6 +3,8 @@ import Root from "../components/Root";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import About from "../pages/About";
+import Career from "../pages/Career";
 
 
 
@@ -13,7 +15,16 @@ const Routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('/news.json')
+            },
+            {
+                path: '/about',
+                element: <About></About>
+            },
+            {
+                path: '/career',
+                element: <Career></Career>
             },
             {
                 path: '/register',

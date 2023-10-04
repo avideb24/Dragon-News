@@ -13,7 +13,7 @@ const LeftSidebar = () => {
 
     return (
         <div>
-            <h2 className="text-xl font-bold">All Categories</h2>
+            <h2 className="text-xl font-bold text-[#403F3F] mb-2">All Categories</h2>
             <div>
                 {
                     categories.map((category, idx) =>

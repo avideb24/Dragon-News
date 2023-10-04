@@ -7,8 +7,8 @@ const NavBar = () => {
             <div></div>
             <div className="flex justify-center gap-4 mt-3 text-[#706F6F]">
                 <Link to='/'>Home</Link>
-                <Link to='/'>About</Link>
-                <Link to='/'>Career</Link>
+                <Link to='/about'>About</Link>
+                <Link to='/career'>Career</Link>
             </div>
             <div className="flex justify-center items-center gap-4">
                 <img className="w-10" src={userPic} alt="user-image" />
