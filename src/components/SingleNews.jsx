@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const SingleNews = ({ news }) => {
 
-    const { title, author, image_url, details, rating, total_view } = news;
+    const { _id, title, author, image_url, details, rating, total_view } = news;
 
     return (
         <div className='pb-4 space-y-2 border-2 rounded-md mb-8'>
@@ -29,7 +29,7 @@ const SingleNews = ({ news }) => {
 
                     <div className='px-4 py-2'>
                         <span className='text-[#706F6F] text-justify'>{details.slice(0, 200)}..... </span>
-                        <Link><button className='font-bold text-[#FF8C47]'>Read More</button></Link>
+                        <Link to={`/news/${_id}`}><button className='font-bold text-[#FF8C47]'>Read More</button></Link>
                     </div>
                     :
                     <p className='px-4 py-2 text-[#706F6F] text-justify'>{details}</p>

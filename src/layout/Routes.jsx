@@ -5,6 +5,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import About from "../pages/About";
 import Career from "../pages/Career";
+import NewsDetails from "../pages/NewsDetails";
 
 
 
@@ -16,6 +17,11 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+                loader: () => fetch('/news.json')
+            },
+            {
+                path: '/news/:id',
+                element: <NewsDetails></NewsDetails>,
                 loader: () => fetch('/news.json')
             },
             {
