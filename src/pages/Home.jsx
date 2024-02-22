@@ -13,7 +13,6 @@ const Home = () => {
 
     return (
         <div>
-            {/* header */}
             <Header></Header>
             <div className="flex gap-2 items-center bg-[#F3F3F3] p-4">
                 <button className="btn btn-sm rounded-none bg-red-500 text-white">Latest</button>
