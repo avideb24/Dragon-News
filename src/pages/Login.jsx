@@ -2,13 +2,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
+
 
 const Login = () => {
 
-    const {signInUser} = useContext(AuthContext);
+    const { signInUser } = useContext(AuthContext);
 
     const location = useLocation();
-    
+
     const navigate = useNavigate();
 
     const handleLogin = e => {
@@ -20,12 +22,18 @@ const Login = () => {
         const password = form.get('password');
 
         signInUser(email, password)
-        .then(res => {
-            console.log(res.user);
-            navigate(location?.state ? location.state : '/')
-        })
-        .catch(err => console.error(err))
+            .then(res => {
+                console.log(res.user);
+                toast("Wow so easy!");
+                navigate(location?.state ? location.state : '/');
+            })
+
+            .catch(err => {
+                console.error(err)
+                toast.error("Invalid Ingredients!")
+            });
     }
+
 
     return (
         <div className="mb-10">
@@ -35,7 +43,7 @@ const Login = () => {
                 <form className="mt-10" onSubmit={handleLogin}>
                     <input className="w-full border-2 border-white p-2 rounded-md" type="email" name="email" placeholder="Enter your email address" />
                     <input className="w-full border-2 border-white p-2 my-4 rounded-md" type="password" name="password" placeholder="Enter your password" />
-                    <input type="submit" className="w-full text-white bg-[#403F3F] py-2 rounded-md" value="Login" />               
+                    <input type="submit" className="w-full text-white bg-[#403F3F] py-2 rounded-md cursor-pointer" value="Login" />
                 </form>
                 <p className="text-center mt-6">Dont’t Have An Account ? <Link className="font-bold text-blue-500" to='/register'>Register</Link></p>
             </div>
